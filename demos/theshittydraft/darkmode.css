@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: #d4d8db;
+}
+
+#display {
+    scrollbar-color:  rgb(53, 53, 53)  rgb(20, 20, 20);  /* new but only for firefox*/
+}
+
+#words {
+    
+}
+
+#write {
+    
+}
+
+#toggle {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgba(255,0,0,0.35);
+    border-radius: 5px;
+}
+
+#toggle:hover {
+    border: 1px solid rgba(255,0,0,0.75);
+}
+
+#display, #write{
+    border: 1px solid rgba(0,0,0,.5);
+    background: rgba(0,0,0,.25);
+    color: #d4d8db;
+    outline: none !important;
+}
+
+/*deprecated but works in  Chrome/Edge/Safari*/
+#display::-webkit-scrollbar {
+    width: 15px;               /* width of the entire scrollbar */
+}
+#display::-webkit-scrollbar-track {
+    background: rgb(20, 20, 20);        /* color of the tracking area */
+}
+#display::-webkit-scrollbar-thumb {
+    background-color: rgb(53, 53, 53);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(20, 20, 20);
+}
+
+
+/* Side Bar */
+
+.sidenav {
+    background-color: #111;
+}
+
+.sidenav a {
+    color: #818181;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}

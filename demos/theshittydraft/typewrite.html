@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="typewrite.css">
+    <link rel="stylesheet" id="theme">
+    <title>The Shitty Draft</title>
+</head>
+<body>
+    <!--
+    <div class="sidenav" id="nav">
+        <a href="#" onclick='toggleNav()'>Hide</a>
+        <a href="#" onclick="toggleDarkMode()">Theme</a>
+        <div id="version"> V 0.1.1</div>
+    </div>
+    -->
+
+    <div class="main">
+        <div style="padding: 0 10%;">
+            <div id="words"></div>
+        </div>
+        
+    
+        <input type="text" id="write" autofocus> <br>
+        <a onclick="toggleVisibility()" id="toggle"> Enter Edit Mode </a> <br>
+        <span id="wordcount"></span>
+    
+        <br> <textarea id="display"></textarea>   
+        
+        <br> <br> <br>
+
+        <div style="max-width: 800px; display: inline-block; cursor: pointer;" id="info" onclick="document.getElementById('info').style.display = 'none';">
+        The idea is to allow you to write without getting distracted by editing. Words will fade out of view until you enter edit mode.
+        Anything you write will be auto-saved to your browser's local storage so you can close this tab and come back to it. 
+        <i> Click here to dismiss this message. </i>
+        </div>
+    </div>
+
+    <script src="typewrite.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+
+#display {
+    
+}
+
+#words {
+    
+}
+
+#write {
+    
+}
+
+#toggle {
+    background-color: rgb(230, 230, 230);
+    border: 2px solid rgba(255,0,0,0.35);
+    border-radius: 5px;
+}
+
+#toggle:hover {
+    border: 2px solid rgba(197, 0, 0, 0.815);
+}
+
+#display, #write{
+    border: 1px solid rgba(0,0,0,.5);
+    background: white;
+    outline: none !important;
+}
+
+/* Side Bar */
+
+.sidenav {
+    background-color: rgb(223, 223, 223);
+}
+
+.sidenav a {
+    color: #2b2b2b;
+}
+
+.sidenav a:hover {
+    color: #4646ff;
+}

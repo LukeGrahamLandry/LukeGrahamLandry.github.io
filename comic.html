@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>Smol Comic</title>
+</head>
+<body>
+    <nav>
+        <a href="/">About</a>
+        <a href="/projects.html"> Projects </a>
+        <a href="/thoughts.html"> Thoughts </a>
+        <a href="/comic.html"> Comics </a>
+        <a href="/learn.html"> Learn </a>
+        <button id="dark-button" onclick="darkToggle()">Dark Mode</button>
+    </nav>
+
+    <br> <img id="comic" style="width: 100%; display: inline-block;" onerror="shift(-1);">
+
+    <div style="text-align: center;">
+        <button onclick="shift(-1);"> Back </button> <button onclick="shift(1);"> Next </button>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <a href="https://buttondown.email/LukeGrahamLandry" target="_blank" id="emaillist"> Subscribe to Email List </a>
+    </footer>
+    <script>
+        let index = parseInt(window.location.hash.substring(1));
+
+        if (location.hash == ""){
+            const urlParams = new URLSearchParams(window.location.search);
+            index = parseInt(urlParams.get('i'));
+        }
+
+        if (isNaN(index)) {
+            index = 1; // switch this to be the most recent one somehow
+        }
+        
+        function shift(i){
+            index = Math.max(0, index + i);
+            location.hash = index;
+            document.getElementById("comic").src = "/assets/comics/" + index + ".png";
+        }
+
+        shift(0);
+    </script>
+</body>
+</html>
