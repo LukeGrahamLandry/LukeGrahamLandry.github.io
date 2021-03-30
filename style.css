@@ -37,17 +37,14 @@ img, video{
 	border: 2px solid #eba613;
 }
 
-#dark-button{
+#dark-button {
 	top:20px;
 	right:20px;
 	position: absolute;
 }
 
-/*
-
-
-	@media (min-width:650px) {
-    
-	
+@media (max-width:540px) {
+    #dark-button {
+		display: none;
+	}
 }
-*/
