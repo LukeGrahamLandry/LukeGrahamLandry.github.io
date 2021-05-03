@@ -2,7 +2,7 @@ a{
 	color:#eba613;
 }
 
-nav a, footer div a{
+nav a, footer a{
 	margin:0px 5px;
 }
 
@@ -41,6 +41,10 @@ img, video{
 	top:20px;
 	right:20px;
 	position: absolute;
+}
+
+.sources {
+	font-size: 0.75rem;
 }
 
 @media (max-width:540px) {

@@ -21,14 +21,17 @@
     <br> <img id="comic" style="width: 100%; display: inline-block;" onerror="shift(-1);">
 
     <div style="text-align: center;">
-        <button onclick="shift(-1);"> Back </button> <button onclick="shift(1);"> Next </button>
+        <button onclick="shift(-1);" id="back-btn"> Back </button> <button onclick="shift(1);" id="next-btn"> Next </button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
     <footer>
         <a href="https://buttondown.email/LukeGrahamLandry" target="_blank" id="emaillist"> Subscribe to Email List </a>
+        <a href="mailto:graham11000@gmail.com?subject=SmolCodes comment" target="_blank"> Contact</a>
     </footer>
     <script>
+        let maxComicIndex = 2;
+
         let index = parseInt(window.location.hash.substring(1));
 
         if (location.hash == ""){
@@ -37,13 +40,25 @@
         }
 
         if (isNaN(index)) {
-            index = 2; // switch this to be the most recent one somehow
+            index = maxComicIndex; // switch this to be the most recent one somehow
         }
         
         function shift(i){
             index = Math.max(0, index + i);
             location.hash = index;
             document.getElementById("comic").src = "/assets/comics/" + index + ".png";
+
+            if (index >= maxComicIndex){
+                document.getElementById("next-btn").disabled = true; 
+            } else {
+                document.getElementById("next-btn").disabled = false; 
+            }
+
+            if (index <= 0){
+                document.getElementById("back-btn").disabled = true; 
+            } else {
+                document.getElementById("back-btn").disabled = false; 
+            }
         }
 
         shift(0);
