@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Affirmations</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #image {
+            border: 2px solid #eba613;
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/about.html">About</a>
+        <a href="/comic.html"> Comic </a>
+        <a href="/antiaffirmation.html"> Sarcastic Calender </a>
+    </nav>
+    <img src="" alt="" id="image" onerror="shift(-1);"> <br>
+    <button onclick="shift(-1);" id="back-btn"> Back </button> <button onclick="shift(1);" id="next-btn"> Next </button>
+   
+    <script>
+        let img = document.getElementById("image");
+
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 4, 2);
+        var diff = now - start;
+        var oneDay = 1000 * 60 * 60 * 24;
+        var currentDay = Math.floor(diff / oneDay);
+        var displayDay = currentDay;
+
+        let hash = parseInt(window.location.hash.substring(1));
+        if (!isNaN(hash)) {
+            displayDay = hash;
+        }
+
+        function shift(change){
+            displayDay += change;
+            if (displayDay >= currentDay){
+                document.getElementById("next-btn").disabled = true;
+                document.getElementById("back-btn").disabled = false;
+                displayDay = currentDay;
+            } else if (displayDay <= 0){
+                document.getElementById("back-btn").disabled = true;
+                document.getElementById("next-btn").disabled = false;
+                displayDay = 0;
+            } else {
+                document.getElementById("next-btn").disabled = false;
+                document.getElementById("back-btn").disabled = false;
+            }
+
+            location.hash = displayDay;
+            img.src = "img/cal/" + displayDay + ".png";
+        }
+        shift(0);
+    </script>
+    
+</body>
+</html>
