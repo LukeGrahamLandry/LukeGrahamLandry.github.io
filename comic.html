@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="style.css">
     <title>Smol Comic</title>
 </head>
 <body>
     <nav>
-        <a href="/about.html">About</a>
-        <a href="/comic.html"> Comic </a>
-        <a href="/antiaffirmation.html"> Sarcastic Calender </a>
+        <a href="about.html">About</a>
+        <a href="comic.html"> Comic </a>
+        <a href="antiaffirmations.html"> Sarcastic Calender </a>
     </nav>
 
     <br> <img id="comic" style="width: 100%; display: inline-block;" onerror="shift(-1);">
@@ -37,7 +37,7 @@
         function shift(i){
             index = Math.max(0, index + i);
             location.hash = index;
-            document.getElementById("comic").src = "/assets/comics/" + index + ".png";
+            document.getElementById("comic").src = "img/comic/" + index + ".png";
 
             if (index >= maxComicIndex){
                 document.getElementById("next-btn").disabled = true; 

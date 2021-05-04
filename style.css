@@ -1,0 +1,46 @@
+a{
+	color:#eba613;
+}
+
+nav a, footer a{
+	margin:0px 10px;
+}
+
+footer {
+	text-align: center;
+}
+
+footer{
+	margin-top:40px;
+	text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+body{
+	font-family: Verdana, sans-serif;
+	margin: auto;
+	padding:18px;
+	max-width: 600px;
+	font-size:18px;
+	text-align: left;
+	background-color:white;
+	position: relative;
+    text-align: center;
+}
+
+
+.dark{
+	color:#f9f9f9;
+	background-color: #222;
+}
+
+img, video{
+	max-width: 600px;
+	border: 2px solid #eba613;
+}
+.sources {
+	font-size: 0.75rem;
+}
